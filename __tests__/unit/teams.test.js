@@ -1,5 +1,5 @@
 const TeamController = require("../../src/controllers/team");
-const TeamDAO = require("../../src/daos/team");
+const MockTeamDAO = require("../../src/daos/__mocks__/team");
 const {MockRequest, MockResponse} = require("../../src/utils/interceptors");
 
 describe("Team", function () {
@@ -11,7 +11,7 @@ describe("Team", function () {
         
         let response = new MockResponse();
 
-        const teamDAO = new TeamDAO();
+        const teamDAO = new MockTeamDAO();
         const teamController = new TeamController(teamDAO);
 
         const {status, data} = teamController.show(request, response);
@@ -32,7 +32,7 @@ describe("Team", function () {
         
         let response = new MockResponse();
 
-        const teamDAO = new TeamDAO();
+        const teamDAO = new MockTeamDAO();
         const teamController = new TeamController(teamDAO);
 
         const {status, data} = teamController.show(request, response);
@@ -52,7 +52,7 @@ describe("Team", function () {
         
         let response = new MockResponse();
 
-        const teamDAO = new TeamDAO();
+        const teamDAO = new MockTeamDAO();
         const teamController = new TeamController(teamDAO);
 
         const {status, data} = teamController.show(request, response);
@@ -72,7 +72,7 @@ describe("Team", function () {
         
         let response = new MockResponse();
 
-        const teamDAO = new TeamDAO();
+        const teamDAO = new MockTeamDAO();
         const teamController = new TeamController(teamDAO);
 
         const {data} = teamController.show(request, response);
@@ -86,7 +86,7 @@ describe("Team", function () {
         
         let response = new MockResponse();
 
-        const teamDAO = new TeamDAO();
+        const teamDAO = new MockTeamDAO();
         const teamController = new TeamController(teamDAO);
 
         const {data} = teamController.show(request, response);
